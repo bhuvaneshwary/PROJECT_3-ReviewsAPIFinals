@@ -1,0 +1,3 @@
+create table products(id int UNSIGNED NOT NULL AUTO_INCREMENT,product_name varchar(255) NOT NULL,cost float NOT NULL,description varchar(1024), PRIMARY KEY(id));
+create table reviews(id int UNSIGNED NOT NULL AUTO_INCREMENT,product_id int UNSIGNED NOT NULL,review varchar(1024) NOT NULL,review_username varchar(255) NOT NULL, PRIMARY KEY(id), FOREIGN KEY (product_id) REFERENCES products(id));
+create table comments(id int UNSIGNED NOT NULL AUTO_INCREMENT,review_id int UNSIGNED NOT NULL,comment varchar(1024) NOT NULL,comment_username varchar(255) NOT NULL, PRIMARY KEY(id), FOREIGN KEY (review_id) REFERENCES reviews(id));
