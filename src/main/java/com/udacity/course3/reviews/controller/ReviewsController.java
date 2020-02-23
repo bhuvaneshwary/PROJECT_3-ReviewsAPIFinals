@@ -51,6 +51,9 @@ public class ReviewsController {
     		/*
     		 * For storing data to mongodb
     		 */
+		
+		Product pro = productRepository.get(productId);
+		review.setProduct(pro)
     		reviewRepo.save(review);//To get the Id to be saved in mongo db
     		ReviewMongo reviewMongo = new ReviewMongo(review.getId(), review.getReview(), review.getReviewUsername(), null);
     		
