@@ -28,10 +28,10 @@ public class ProductsController {
      * 1. Accept product as argument. Use {@link RequestBody} annotation.
      * 2. Save product.
      */
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+   @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody Product product) {
-    	prodRepo.save(product);
+    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+        return ResponseEntity.ok(productRepository.save(product));
     }
 
     /**
