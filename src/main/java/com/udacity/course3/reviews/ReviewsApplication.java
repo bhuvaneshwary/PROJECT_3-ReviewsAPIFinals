@@ -18,8 +18,6 @@ public class ReviewsApplication {
 		
 		/* ******************** Flyway to create tables in the db *********** */
 		
-		//Flyway flyway = Flyway.configure().dataSource(url, username, password).load();
-		Flyway flyway = Flyway.configure().dataSource("jdbc:mysql://localhost:3306/jdnd_p03", "root", "root").load();
 		
 		
 		//If a schema already exists we use baseline to create a baseline if it doesn't exist
@@ -27,9 +25,7 @@ public class ReviewsApplication {
 		
 		//To correct any errors in the flyway migrations, before starting a new migration
 		//flyway.repair();
-		
-		//To create the tables from the resources/db/migrations/
-		flyway.migrate();
+	
 		
 	}
 	
